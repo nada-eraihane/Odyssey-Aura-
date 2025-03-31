@@ -1,0 +1,297 @@
+body {
+    background-color: #FFF0F7;
+    font-family: Lora, serif;
+    padding: 0;
+    margin: 0;
+} 
+header {
+    margin: 20px;
+    display: flex;
+    justify-content: right;
+    background: url(images/header.png);
+    background-size: cover;
+    height: 150px;
+    padding: 30px;
+    align-items: center;
+    color: blanchedalmond;
+    font-size: x-large;
+    border-radius: 10px ;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2)
+}
+.social-bar {
+    display: flex;
+}
+.social-bar a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.social-bar a:hover {
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.social-bar a i {
+    font-size: 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #F68CAC;
+    padding: 5px;
+    border-radius: 50px;
+    margin: 20px 20px 0 20px;
+    font-family: Lora, serif;
+    font-size: 16px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2)
+}
+
+nav .nav-links {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+nav a {
+    color: blanchedalmond;
+    text-decoration: dotted;
+    transition: color 0.5s;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: #FDFAE5;
+    font-weight: bold;
+}
+
+nav .search-container {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+nav input[type="text"] {
+    padding: 10px;
+    font-size: medium;
+    font-family: Lora, serif;
+    height: 20px;
+    width: 300px;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: medium;
+    font-family: Lora, serif;
+    background: #D16699;
+    border: none;
+    color: blanchedalmond;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2)
+}
+
+nav button:hover {
+    background: #FDFAE5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 4);
+    transform: translateY(-1px);
+    color:#F68CAC;
+}
+nav a.active {
+    color: #12405c; 
+    text-decoration: underline;
+}
+#map {
+    height: 500px;
+    width: 97%;
+    margin: 20px 20px 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2)
+}
+main {
+    display: flex;
+    margin: 0 20px 20px 20px;
+}
+.article-section {
+    flex: 2;
+}
+.aside-section {
+    flex: 1;
+    padding-left: 40px;
+}
+.aside-section h1 {
+    font-size: 35px;
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+}
+.article-section h1 {
+    font-size: 35px;
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+}
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color:#FDFAE5;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    font-size: medium;
+    font-family: Lora, serif;
+    text-align: justify;
+    box-shadow: 0 4px 8px rgba(0,0,0,2);
+    margin-top: 20px;
+}
+.card h1 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+.card h3 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Ubuntu, sans-serif;
+    text-decoration: underline;
+    padding: 0;
+}
+.card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Ubuntu, sans-serif;
+}
+.card p {
+    font-size: 16px;
+    font-family: Lora, serif;
+    text-align: justify;
+    text-indent: 10px ;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 2);
+}
+.card-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image {
+    background-color: #FDFAE5;
+    padding: 10px;
+    position: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.images {
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    background-color:#FDFAE5 ;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+}
+.round-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+form {
+    background: #806d7e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: 20px;
+    font-size: 16px;
+    font-family: Lora, serif;
+}
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    width: 98%;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid #806d7e;
+}
+input[type="submit"], button[type="submit"] {
+    background: #F68CAC;
+    color: #efe4ee;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-family: Lora, serif;
+}
+input[type="submit"]:hover, button[type="submit"]:hover {
+    background: #FDFAE5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 98%;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid #806d7e;
+}
+input[type="submit"], button[type="submit"] {
+    background: #F68CAC;
+    color: #efe4ee;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-family: Lora, serif;
+}
+input[type="submit"]:hover, button[type="submit"]:hover {
+    background: #FDFAE5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+footer {
+    padding: 20px;
+    background-color:#D16699;
+    color: #FDFAE5;
+    text-align: center;
+}
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+.checklist li {
+    color: rgb(113, 16, 92);
+}
+.checklist li.valid {
+    color: rgb(111, 177, 111);
+}
+.password-container {
+    position: relative;
+}
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: calc(100% - 40px);
+    padding-right: 30px;
+}
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

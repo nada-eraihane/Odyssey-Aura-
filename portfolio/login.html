@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Lora">
+    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="searchfunction.js"></script>
+</head>
+<body>
+    <header>
+        <div class="social-bar">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="destination.html">Destinations</a> 
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active">login</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </nav>
+
+    <section>
+        <form action="/register" method="POST" onsubmit="return validateForm()">
+            <label>
+                Username:
+                <input type="text" name="username" required>
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Password:
+                <div class="password-container">
+                    <input type="password" name="password" required onkeyup="validatePassword()">
+                    <span class="toggle-password" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </label>
+            <label>
+                Confirm Password:
+                <div class="password-container">
+                    <input type="password" name="confirm_password" required>
+                    <span class="toggle-password" onclick="togglePassword('confirm_password')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </label>
+            <ul class="checklist">
+                <li id="length" class="invalid">At least 8 characters</li>
+                <li id="number" class="invalid">At least 1 number</li>
+                <li id="special" class="invalid">At least 1 special character</li>
+                <li id="uppercase" class="invalid">At least 1 uppercase letter</li>
+            </ul>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <footer>
+        <h4>&copy; 2024 Odyssey Aura</h4>
+    </footer>
+    <script>
+        function validatePassword() {
+            const password = document.querySelector('input[name="password"]').value;
+            const length = document.getElementById('length');
+            const number = document.getElementById('number');
+            const special = document.getElementById('special');
+            const uppercase = document.getElementById('uppercase');
+            
+            const lengthValid = password.length >= 8;
+            const numberValid = /\d/.test(password);
+            const specialValid = /[!@#$%^&*(),.?":{}|<>_-]/.test(password);
+            const uppercaseValid = /[A-Z]/.test(password);
+            
+            length.classList.toggle('valid', lengthValid);
+            number.classList.toggle('valid', numberValid);
+            special.classList.toggle('valid', specialValid);
+            uppercase.classList.toggle('valid', uppercaseValid);
+            
+            length.classList.toggle('invalid', !lengthValid);
+            number.classList.toggle('invalid', !numberValid);
+            special.classList.toggle('invalid', !specialValid);
+            uppercase.classList.toggle('invalid', !uppercaseValid);
+        }
+
+        function validateForm() {
+            const password = document.querySelector('input[name="password"]').value;
+            const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+            const lengthValid = password.length >= 8;
+            const numberValid = /\d/.test(password);
+            const specialValid = /[!@#$%^&*(),.?":{}|<>_-]/.test(password);
+            const uppercaseValid = /[A-Z]/.test(password);
+
+            if (!lengthValid || !numberValid || !specialValid || !uppercaseValid) {
+                alert("Password does not meet the required criteria.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            
+            alert("You are now registered!");
+            window.location.href = "home.html"; // redirect to home page
+
+            return false; // prevent actual form submission for demo purposes
+        }
+
+        function togglePassword(fieldName) {
+            const field = document.querySelector(`input[name="${fieldName}"]`);
+            const icon = field.nextElementSibling.querySelector('i');
+            if (field.type === "password") {
+                field.type = "text";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                field.type = "password";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

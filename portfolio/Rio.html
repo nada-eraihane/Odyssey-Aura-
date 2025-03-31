@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rio de Janeiro - Odyssey Aura</title>
+    <link rel="stylesheet" href="blogstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="social-bar">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="destination.html">Destinations</a> 
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">login</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </nav>
+    <script src="searchfunction.js"></script>
+    <div class="main-1">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/rio1.jpg" alt="rio Image 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/rio2.jpg" alt="rio Image 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/rio3.jpg" alt="rio Image 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/rio4.jpg" alt="rio Image 4">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/rio5.jpg" alt="rio Image 5">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/rio6.jpg" alt="rio Image 6">
+            </div>            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+        <div class="article-content" style="color: black;">
+                <h2>Exploring Rio de Janeiro</h2>
+                <p>Rio de Janeiro isn’t just a city — it’s a feeling. From the moment I arrived, the energy was electric. Whether it’s the rhythm of samba echoing through the streets or the golden beaches buzzing with life, Rio is alive in every sense of the word.</p>
+                <p>One of my first stops was the iconic Christ the Redeemer. Standing at the top of Corcovado, arms outstretched, the statue is even more breathtaking up close — and the view of the city from there? Unreal. Mountains, sea, and skyline all in one frame.</p>
+                <p>I spent my afternoons lounging on Copacabana and Ipanema beaches, soaking up the sun and sipping fresh coconut water straight from the source. Locals were playing beach volleyball, vendors wandered past with açai bowls, and the vibe was pure joy.</p>
+                <p>In the evening, I headed up Sugarloaf Mountain by cable car. Watching the sun set over the city and the ocean was unforgettable — orange skies melting into the horizon as the lights of Rio started to sparkle below.</p>
+                <p>And of course, I couldn’t leave without dancing. I found myself in Lapa, where music pours out of every bar and people dance like nobody’s watching. It was sweaty, loud, and absolutely perfect.</p>
+                <p>Rio stole my heart with its color, warmth, and contagious spirit. It’s the kind of place you leave with sand in your shoes and a smile that lingers for days.</p>
+            </div>
+            
+    </div>
+    <footer>
+        <h4>&copy; 2024 Odyssey Aura</h4>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

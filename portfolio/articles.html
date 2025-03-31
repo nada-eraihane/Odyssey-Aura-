@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Articles</title>
+    <link rel="stylesheet" href="stylearticles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Lora">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="social-bar">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="destination.html">Destinations</a> 
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">login</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </nav>
+    <script src="searchfunction.js"></script>
+
+    <main>
+        <section class="article-section">
+            <h1>All Blog Posts:</h1>
+            <div class="articles-container">
+                <article class="card" onclick="window.location.href='paris.html';">
+                    <img src="images/paris1.jpg" alt="Paris">
+                    <h2>Exploring Paris</h2>
+                    <p>Romantic getaways, Feb 10, 2024</p>
+                </article>
+                <article class="card" onclick="window.location.href='dubai.html';">
+                    <img src="images/dubai1.jpg" alt="Dubai">
+                    <h2>A Week in Dubai</h2>
+                    <p>A nice holiday in the city, Jan 5, 2024</p>
+                </article>
+                <article class="card" onclick="window.location.href='rio.html';">
+                    <img src="images/rio1.jpg" alt="Rio">
+                    <h2>Discovering Rio</h2>
+                    <p>Vibrant cultures, Apr 20, 2024</p>
+                </article>
+                <article class="card" onclick="window.location.href='tokyo.html';">
+                    <img src="images/tokyo1.jpg" alt="Tokyo">
+                    <h2>Exploring Tokyo</h2>
+                    <p>Urban exploration, Mar 16, 2023</p>
+                </article>
+                <article class="card" onclick="window.location.href='london.html';">
+                    <img src="images/london1.jpg" alt="London">
+                    <h2>Exploring London</h2>
+                    <p>City tour, Mar 15, 2024</p>
+                </article>
+                <article class="card" onclick="window.location.href='algiers.html';">
+                    <img src="images/algiers1.jpg" alt="Algiers">
+                    <h2>Discovering Algiers</h2>
+                    <p>Historical treasures, May 1, 2024</p>
+                </article>
+                <article class="card" onclick="window.location.href='greece.html';">
+                    <img src="images/greece1.jpg" alt="Greece">
+                    <h2>Exploring Greece</h2>
+                    <p>Ancient wonders, Jun 10, 2024</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h4>&copy; 2024 Odyssey Aura</h4>
+    </footer>
+</body>
+</html>
+
+        
+

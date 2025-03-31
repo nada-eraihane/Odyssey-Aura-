@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog</title>
+        <!-- fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Lora">
+        <!-- link to CSS file -->
+        <link rel="stylesheet" href="navstyle.css"> 
+        <!-- social media icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <!-- header with social media bar -->
+        <header>
+            <div class="social-bar">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </header>
+        
+        <!-- navigation bar-->
+        <nav>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="destination.html">Destinations</a> 
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+            <!-- search bar-->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="search()">Search</button>
+            </div>
+        </nav>
+        
+        <!-- JavaScript search functionality -->
+        <script src="searchfunction.js"></script>
+        
+        
+        <main>
+            <!-- section for latest blog posts -->
+            <section class="article-section">
+                <h1>Latest posts:</h1>
+                <!--  card for Dubai -->
+                <article class="card" onclick="window.location.href='dubai.html';">
+                    <h2>A Week in Dubai</h2>
+                    <p>A nice holiday in the city, Jan 5, 2024</p>
+                    <img src="images/dubai.jpg" alt="Dubai" style="width:100%;height:400px;">
+                    <p>Introduction to the adventure...</p>
+                    <p>This was a challenging yet exhilarating journey through the rugged mountains. The views were breathtaking, and the experience was unforgettable.</p>
+                </article>
+                <!--  card for London -->
+                <article class="card" onclick="window.location.href='london.html';">
+                    <h2>Exploring London</h2>
+                    <p>Urban exploration, Mar 15, 2024</p>
+                    <img src="images/london.jpg" alt="City view" style="width:100%;height:500px;">
+                    <p>Introduction to the cityscape...</p>
+                    <p>Walking through the bustling city streets, discovering hidden gems and local culture. The city has its unique charm that captivates every visitor.</p>
+                </article>
+            </section>
+            
+            <!-- Side section  -->
+            <aside class="aside-section">
+                <!-- About card -->
+                <div class="card card-center" onclick="window.location.href='about.html'">
+                    <h2>About Me</h2>
+                    <img src="images/about.jpg" alt="About me" class="round-image">
+                    <h3>Click to learn more!</h3>
+                    <p>Hi! I'm an avid traveler and storyteller. Follow my adventures as I explore the world, one destination at a time.</p>
+                </div>
+                <!-- articles card -->
+                <div class="card card-center" onclick="window.location.href='articles.html'">
+                    <h2>Articles</h2>
+                    <p>Click to see all the blog posts!</p>
+                </div>
+            </aside>
+        </main>
+
+        
+        <!-- footer-->
+        <footer>
+            <h4>&copy; 2024 Odyssey Aura</h4>
+        </footer>
+    </body>
+</html>

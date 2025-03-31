@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Odyssey Aura</title>
+    <!--fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Lora">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- header section with social media links -->
+    <header>
+        <div class="social-bar">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+    
+    <!-- navigation bar -->
+    <nav>
+        <a href="home.html" class="active">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="destination.html">Destinations</a> 
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+    
+    <!-- background section with search bar-->
+    <div class="background">
+        <input type="text" id="searchInput" placeholder="Search..." >
+        <button onclick="search()">Search</button>
+        <div id="suggestions" class="suggestions-container"></div>
+    </div>
+    
+    <!-- login bar-->
+    <div class="login-section">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    
+    
+    <main>
+        <!-- about snippet-->
+        <div class="about-snippet" onclick="window.location.href='about.html'">
+            <h1>About Us:</h1>
+            <img src="images/about.jpg" alt="About us" class="round-image">
+            <p>Welcome to Odyssey Aura! We are passionate travelers who 
+                love to explore new places, cultures, and adventures. 
+                Our journey started with a simple desire to see the world and has since 
+                grown into a mission to share our experiences with others.</p>
+        </div>
+        
+        <!--top articles -->
+        <div class="top-articles">
+            <h1>Top Articles:</h1>
+            <p><a href="dubai.html">Dubai</a></p>
+            <p><a href="london.html">London</a></p>
+            <p><a href="paris.html">Paris</a></p>
+            <p><a href="tokyo.html">Tokyo</a></p>
+        </div>
+    </main>
+    
+    <!-- footer -->
+    <footer>
+        <h4>&copy; 2024 Odyssey Aura</h4>
+    </footer>
+    
+    <!--JavaScript for search function -->
+    <script src="searchfunction.js"></script>
+<!--JavaScript for login-->
+    <script>
+        function validatePassword(password) {
+            const lengthValid = password.length >= 8;
+            const numberValid = /\d/.test(password);
+            const specialValid = /[!@#$%^&*(),.?":{}|<>_-]/.test(password);
+            const uppercaseValid = /[A-Z]/.test(password);
+
+            return lengthValid && numberValid && specialValid && uppercaseValid;
+        }
+
+        function login() {
+            const password = document.getElementById('password').value;
+
+            if (validatePassword(password)) {
+                alert("You are now logged in!");
+
+            } else {
+                alert("Password must have at least 8 characters, 1 number, 1 special character, and 1 uppercase letter.");
+            }
+        }
+    </script>
+</body>
+</html>

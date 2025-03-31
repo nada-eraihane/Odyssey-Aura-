@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>London - Odyssey Aura</title>
+    <link rel="stylesheet" href="blogstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="social-bar">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="destination.html">Destinations</a> 
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">login</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </nav>
+    <script src="searchfunction.js"></script>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/london1.jpg" alt="london Image 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/london2.jpg" alt="london Image 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/london3.jpg" alt="london Image 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/london4.jpg" alt="london Image 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/london5.jpg" alt="london Image 5">
+
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <div class="article-content" style="color: black;">
+        
+            <h2>Exploring London</h2>
+            <p>London is one of those cities that instantly sweeps you off your feet. It’s rich in history, buzzing with energy, and packed with iconic landmarks that somehow feel even more magical in person.</p>
+            <p>I kicked things off with a classic red bus tour — yes, it's touristy, but it's also the best way to take in the sights without wearing out your shoes on day one. From Big Ben and the Houses of Parliament to Tower Bridge and St. Paul’s Cathedral, it felt like walking through a movie set.</p>
+            <p>One of my favorite spots was Camden Market — an explosion of colors, quirky shops, and food stalls that made choosing lunch nearly impossible. I settled on a loaded halloumi wrap and a bubble tea that made my tastebuds very happy.</p>
+            <p>In the afternoon, I strolled through Hyde Park, watched the swans glide across the Serpentine, and even caught a street performance at Covent Garden. London is full of little moments like that — spontaneous, charming, and totally unforgettable.</p>
+            <p>I wrapped up the day in Soho with fish and chips (obviously) and some live music. London knows how to blend its royal roots with edgy modern vibes, and I loved every minute of it.</p>
+            <p>If you ever get the chance to visit, don’t just stick to the big sights. Get lost in a bookshop, chat with a local in a café, or explore a random street — that’s where the real London lives.</p>
+        </div>
+        
+    <footer>
+        <h4>&copy; 2024 Odyssey Aura</h4>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
